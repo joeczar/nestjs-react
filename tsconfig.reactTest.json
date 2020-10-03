@@ -1,0 +1,26 @@
+
+{
+  "extends": "./tsconfig.webpack.json",
+    "compilerOptions": {
+      "target": "ES2018",
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
+      ],
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "noEmit": true,
+      "esModuleInterop": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+      "jsx": "react",
+      "rootDir": "./test/React", 
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true
+        
+    },
+    "include":["**/*.ts","**/*.tsx"]
+}
