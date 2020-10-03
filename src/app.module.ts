@@ -8,9 +8,9 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import Joi from '@hapi/joi';
 import { DatabaseModule } from './database/database.module';
+import { AuthController } from './auth/auth.controller';
 @Module({
   imports: [
-    
     ConfigModule.forRoot({
       validationSchema: Joi.object({
         POSTGRES_HOST: Joi.string().required(),
@@ -27,7 +27,7 @@ import { DatabaseModule } from './database/database.module';
     AuthModule,
     UserModule,
   ],
-  controllers: [],
+  controllers: [AppController, AuthController],
   providers: [],
 })
 export class AppModule {}
