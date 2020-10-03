@@ -5,10 +5,14 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-
+  console.log(join(__dirname, 'client'));
+  
+  app.useStaticAssets(join(__dirname, 'client'), {
+    prefix: '/assets',
+  });
   app.useStaticAssets(join(__dirname, '..', 'public'));
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
-  app.setViewEngine('hbs');
+  app.setViewEngine('ejs');
 
   await app.listen(3000);
 }
