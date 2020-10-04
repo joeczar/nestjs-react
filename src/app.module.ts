@@ -10,6 +10,7 @@ import Joi from '@hapi/joi';
 import { DatabaseModule } from './database/database.module';
 import { AuthController } from './auth/auth.controller';
 import { JwtService } from '@nestjs/jwt';
+import { UserController } from './user/user.controller';
 
 @Module({
   imports: [
@@ -29,7 +30,7 @@ import { JwtService } from '@nestjs/jwt';
     AuthModule,
     UserModule,
   ],
-  controllers: [AuthController, AppController],
-  providers: [AppService, AuthService],
+  controllers: [UserController, AuthController, AppController],
+  providers: [AuthService, AppService],
 })
 export class AppModule {}

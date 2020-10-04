@@ -32,6 +32,20 @@ export class UserService {
     );
   }
 
+  async getAll() {
+    try {
+      const users = await this.usersRepository.find({
+        select: ['id', 'name', 'email'],
+      });
+      if (users) {
+        return users;
+      }
+      throw new HttpException('No users found', HttpStatus.NOT_FOUND);
+    } catch (err) {
+      console.log('Error in UserService - getAll', err);
+    }
+  }
+
   async create(userData: CreateUserDto) {
     const newUser = await this.usersRepository.create(userData);
     await this.usersRepository.save(newUser);
