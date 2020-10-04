@@ -1162,7 +1162,7 @@
         "affectsGlobalScope": false
       },
       "./src/app.controller.ts": {
-        "version": "a0b4e8965c489bf1b4735e24ec80ebe4ffc51991b12fbf4c5d05faff9257b608",
+        "version": "1cb6c5209c2fc0756a20e87c685c4dbe45976d1df92eb0b78e69c61bd5a0127e",
         "signature": "61a2a67d11a0ffc2167ca38128c808b95be819705b5a98dff20eb9c30f6261b5",
         "affectsGlobalScope": false
       },
@@ -3607,7 +3607,7 @@
         "affectsGlobalScope": false
       },
       "./src/auth/auth.module.ts": {
-        "version": "a0984eaeb11ccc7c8adab60b7f379e7adcd070e9813a5332081f56b48bdeecd1",
+        "version": "c6b26dd7eef26e46aa7406f83f766972ef8a983e60d86468ec0c35cd77cc305d",
         "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1",
         "affectsGlobalScope": false
       },
@@ -3622,7 +3622,7 @@
         "affectsGlobalScope": false
       },
       "./src/app.module.ts": {
-        "version": "102f178935af415674d415445349a203880b229bf9855f3b72b89a09c01effca",
+        "version": "b5cdfa2affbe8ad411a4447c04ed0dfaa46207f46914c44ed5f89670647c0e38",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -7241,6 +7241,7 @@
       "./src/app.module.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
         "./node_modules/@nestjs/config/index.d.ts",
+        "./node_modules/@nestjs/jwt/index.d.ts",
         "./node_modules/@types/hapi__joi/index.d.ts",
         "./src/app.controller.ts",
         "./src/app.service.ts",
@@ -8148,6 +8149,8 @@
         "./node_modules/typeorm/index.d.ts"
       ],
       "./node_modules/@nestjs/typeorm/dist/index.d.ts": [
+        "./node_modules/@nestjs/typeorm/dist/common/index.d.ts",
+        "./node_modules/@nestjs/typeorm/dist/interfaces/index.d.ts",
         "./node_modules/@nestjs/typeorm/dist/typeorm.module.d.ts"
       ],
       "./node_modules/@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type.d.ts": [
@@ -8163,6 +8166,8 @@
       ],
       "./node_modules/@nestjs/typeorm/dist/typeorm.module.d.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
+        "./node_modules/@nestjs/typeorm/dist/interfaces/entity-class-or-schema.type.d.ts",
+        "./node_modules/@nestjs/typeorm/dist/interfaces/typeorm-options.interface.d.ts",
         "./node_modules/typeorm/index.d.ts"
       ],
       "./node_modules/@nestjs/typeorm/index.d.ts": [
@@ -9327,6 +9332,7 @@
       "./node_modules/typeorm/connection/BaseConnectionOptions.d.ts": [
         "./node_modules/typeorm/cache/QueryResultCache.d.ts",
         "./node_modules/typeorm/connection/Connection.d.ts",
+        "./node_modules/typeorm/driver/types/DatabaseType.d.ts",
         "./node_modules/typeorm/entity-schema/EntitySchema.d.ts",
         "./node_modules/typeorm/logger/Logger.d.ts",
         "./node_modules/typeorm/logger/LoggerOptions.d.ts",
@@ -9338,6 +9344,8 @@
         "./node_modules/typeorm/common/ObjectType.d.ts",
         "./node_modules/typeorm/connection/ConnectionOptions.d.ts",
         "./node_modules/typeorm/driver/Driver.d.ts",
+        "./node_modules/typeorm/driver/types/IsolationLevel.d.ts",
+        "./node_modules/typeorm/driver/types/ReplicationMode.d.ts",
         "./node_modules/typeorm/entity-manager/EntityManager.d.ts",
         "./node_modules/typeorm/entity-manager/MongoEntityManager.d.ts",
         "./node_modules/typeorm/entity-manager/SqljsEntityManager.d.ts",
@@ -9352,7 +9360,8 @@
         "./node_modules/typeorm/query-runner/QueryRunner.d.ts",
         "./node_modules/typeorm/repository/MongoRepository.d.ts",
         "./node_modules/typeorm/repository/Repository.d.ts",
-        "./node_modules/typeorm/repository/TreeRepository.d.ts"
+        "./node_modules/typeorm/repository/TreeRepository.d.ts",
+        "./node_modules/typeorm/subscriber/EntitySubscriberInterface.d.ts"
       ],
       "./node_modules/typeorm/connection/ConnectionManager.d.ts": [
         "./node_modules/typeorm/connection/Connection.d.ts",
@@ -9496,10 +9505,15 @@
       "./node_modules/typeorm/driver/Driver.d.ts": [
         "./node_modules/typeorm/common/ObjectLiteral.d.ts",
         "./node_modules/typeorm/connection/BaseConnectionOptions.d.ts",
+        "./node_modules/typeorm/driver/types/ColumnTypes.d.ts",
+        "./node_modules/typeorm/driver/types/DataTypeDefaults.d.ts",
+        "./node_modules/typeorm/driver/types/MappedColumnTypes.d.ts",
+        "./node_modules/typeorm/driver/types/ReplicationMode.d.ts",
         "./node_modules/typeorm/metadata/ColumnMetadata.d.ts",
         "./node_modules/typeorm/metadata/EntityMetadata.d.ts",
         "./node_modules/typeorm/query-runner/QueryRunner.d.ts",
-        "./node_modules/typeorm/schema-builder/SchemaBuilder.d.ts"
+        "./node_modules/typeorm/schema-builder/SchemaBuilder.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableColumn.d.ts"
       ],
       "./node_modules/typeorm/driver/SqlInMemory.d.ts": [
         "./node_modules/typeorm/driver/Query.d.ts"
@@ -9595,11 +9609,17 @@
         "./node_modules/typeorm/common/EntityTarget.d.ts",
         "./node_modules/typeorm/common/ObjectType.d.ts",
         "./node_modules/typeorm/connection/Connection.d.ts",
+        "./node_modules/typeorm/driver/mongodb/typings.d.ts",
+        "./node_modules/typeorm/driver/types/IsolationLevel.d.ts",
         "./node_modules/typeorm/find-options/FindConditions.d.ts",
         "./node_modules/typeorm/find-options/FindManyOptions.d.ts",
         "./node_modules/typeorm/find-options/FindOneOptions.d.ts",
         "./node_modules/typeorm/query-builder/QueryPartialEntity.d.ts",
         "./node_modules/typeorm/query-builder/SelectQueryBuilder.d.ts",
+        "./node_modules/typeorm/query-builder/result/DeleteResult.d.ts",
+        "./node_modules/typeorm/query-builder/result/InsertResult.d.ts",
+        "./node_modules/typeorm/query-builder/result/UpdateResult.d.ts",
+        "./node_modules/typeorm/query-builder/transformer/PlainObjectToNewEntityTransformer.d.ts",
         "./node_modules/typeorm/query-runner/QueryRunner.d.ts",
         "./node_modules/typeorm/repository/MongoRepository.d.ts",
         "./node_modules/typeorm/repository/RemoveOptions.d.ts",
@@ -9612,12 +9632,17 @@
         "./node_modules/typeorm/common/EntityTarget.d.ts",
         "./node_modules/typeorm/common/ObjectLiteral.d.ts",
         "./node_modules/typeorm/connection/Connection.d.ts",
+        "./node_modules/typeorm/driver/mongodb/MongoQueryRunner.d.ts",
+        "./node_modules/typeorm/driver/mongodb/typings.d.ts",
         "./node_modules/typeorm/entity-manager/EntityManager.d.ts",
         "./node_modules/typeorm/find-options/FindManyOptions.d.ts",
         "./node_modules/typeorm/find-options/FindOneOptions.d.ts",
         "./node_modules/typeorm/index.d.ts",
         "./node_modules/typeorm/metadata/EntityMetadata.d.ts",
-        "./node_modules/typeorm/query-builder/QueryPartialEntity.d.ts"
+        "./node_modules/typeorm/query-builder/QueryPartialEntity.d.ts",
+        "./node_modules/typeorm/query-builder/result/DeleteResult.d.ts",
+        "./node_modules/typeorm/query-builder/result/InsertResult.d.ts",
+        "./node_modules/typeorm/query-builder/result/UpdateResult.d.ts"
       ],
       "./node_modules/typeorm/entity-manager/SqljsEntityManager.d.ts": [
         "./node_modules/typeorm/connection/Connection.d.ts",
@@ -9629,7 +9654,8 @@
       ],
       "./node_modules/typeorm/entity-schema/EntitySchemaColumnOptions.d.ts": [
         "./node_modules/typeorm/decorator/options/SpatialColumnOptions.d.ts",
-        "./node_modules/typeorm/decorator/options/ValueTransformer.d.ts"
+        "./node_modules/typeorm/decorator/options/ValueTransformer.d.ts",
+        "./node_modules/typeorm/driver/types/ColumnTypes.d.ts"
       ],
       "./node_modules/typeorm/entity-schema/EntitySchemaOptions.d.ts": [
         "./node_modules/typeorm/entity-schema/EntitySchemaCheckOptions.d.ts",
@@ -9639,12 +9665,17 @@
         "./node_modules/typeorm/entity-schema/EntitySchemaRelationOptions.d.ts",
         "./node_modules/typeorm/entity-schema/EntitySchemaUniqueOptions.d.ts",
         "./node_modules/typeorm/find-options/OrderByCondition.d.ts",
-        "./node_modules/typeorm/index.d.ts"
+        "./node_modules/typeorm/index.d.ts",
+        "./node_modules/typeorm/metadata/types/TableTypes.d.ts"
       ],
       "./node_modules/typeorm/entity-schema/EntitySchemaRelationOptions.d.ts": [
         "./node_modules/typeorm/decorator/options/JoinColumnOptions.d.ts",
         "./node_modules/typeorm/decorator/options/JoinTableMultipleColumnsOptions.d.ts",
-        "./node_modules/typeorm/index.d.ts"
+        "./node_modules/typeorm/index.d.ts",
+        "./node_modules/typeorm/metadata/types/DeferrableType.d.ts",
+        "./node_modules/typeorm/metadata/types/OnDeleteType.d.ts",
+        "./node_modules/typeorm/metadata/types/OnUpdateType.d.ts",
+        "./node_modules/typeorm/metadata/types/RelationTypes.d.ts"
       ],
       "./node_modules/typeorm/find-options/FindConditions.d.ts": [
         "./node_modules/typeorm/find-options/FindOperator.d.ts"
@@ -9719,7 +9750,55 @@
         "./node_modules/typeorm/decorator/Generated.d.ts",
         "./node_modules/typeorm/decorator/Index.d.ts",
         "./node_modules/typeorm/decorator/Unique.d.ts",
+        "./node_modules/typeorm/decorator/columns/Column.d.ts",
+        "./node_modules/typeorm/decorator/columns/CreateDateColumn.d.ts",
+        "./node_modules/typeorm/decorator/columns/DeleteDateColumn.d.ts",
+        "./node_modules/typeorm/decorator/columns/ObjectIdColumn.d.ts",
+        "./node_modules/typeorm/decorator/columns/PrimaryColumn.d.ts",
+        "./node_modules/typeorm/decorator/columns/PrimaryGeneratedColumn.d.ts",
+        "./node_modules/typeorm/decorator/columns/UpdateDateColumn.d.ts",
+        "./node_modules/typeorm/decorator/columns/VersionColumn.d.ts",
+        "./node_modules/typeorm/decorator/columns/ViewColumn.d.ts",
+        "./node_modules/typeorm/decorator/entity-view/ViewEntity.d.ts",
+        "./node_modules/typeorm/decorator/entity/ChildEntity.d.ts",
+        "./node_modules/typeorm/decorator/entity/Entity.d.ts",
+        "./node_modules/typeorm/decorator/entity/TableInheritance.d.ts",
+        "./node_modules/typeorm/decorator/listeners/AfterInsert.d.ts",
+        "./node_modules/typeorm/decorator/listeners/AfterLoad.d.ts",
+        "./node_modules/typeorm/decorator/listeners/AfterRemove.d.ts",
+        "./node_modules/typeorm/decorator/listeners/AfterUpdate.d.ts",
+        "./node_modules/typeorm/decorator/listeners/BeforeInsert.d.ts",
+        "./node_modules/typeorm/decorator/listeners/BeforeRemove.d.ts",
+        "./node_modules/typeorm/decorator/listeners/BeforeUpdate.d.ts",
+        "./node_modules/typeorm/decorator/listeners/EventSubscriber.d.ts",
+        "./node_modules/typeorm/decorator/options/ColumnOptions.d.ts",
+        "./node_modules/typeorm/decorator/options/EntityOptions.d.ts",
+        "./node_modules/typeorm/decorator/options/IndexOptions.d.ts",
+        "./node_modules/typeorm/decorator/options/JoinColumnOptions.d.ts",
+        "./node_modules/typeorm/decorator/options/JoinTableOptions.d.ts",
+        "./node_modules/typeorm/decorator/options/RelationOptions.d.ts",
+        "./node_modules/typeorm/decorator/options/ValueTransformer.d.ts",
+        "./node_modules/typeorm/decorator/relations/JoinColumn.d.ts",
+        "./node_modules/typeorm/decorator/relations/JoinTable.d.ts",
+        "./node_modules/typeorm/decorator/relations/ManyToMany.d.ts",
+        "./node_modules/typeorm/decorator/relations/ManyToOne.d.ts",
+        "./node_modules/typeorm/decorator/relations/OneToMany.d.ts",
+        "./node_modules/typeorm/decorator/relations/OneToOne.d.ts",
+        "./node_modules/typeorm/decorator/relations/RelationCount.d.ts",
+        "./node_modules/typeorm/decorator/relations/RelationId.d.ts",
+        "./node_modules/typeorm/decorator/transaction/Transaction.d.ts",
+        "./node_modules/typeorm/decorator/transaction/TransactionManager.d.ts",
+        "./node_modules/typeorm/decorator/transaction/TransactionRepository.d.ts",
+        "./node_modules/typeorm/decorator/tree/Tree.d.ts",
+        "./node_modules/typeorm/decorator/tree/TreeChildren.d.ts",
+        "./node_modules/typeorm/decorator/tree/TreeLevelColumn.d.ts",
+        "./node_modules/typeorm/decorator/tree/TreeParent.d.ts",
         "./node_modules/typeorm/driver/Driver.d.ts",
+        "./node_modules/typeorm/driver/mongodb/typings.d.ts",
+        "./node_modules/typeorm/driver/sqlserver/MssqlParameter.d.ts",
+        "./node_modules/typeorm/driver/types/ColumnTypes.d.ts",
+        "./node_modules/typeorm/driver/types/DatabaseType.d.ts",
+        "./node_modules/typeorm/driver/types/ReplicationMode.d.ts",
         "./node_modules/typeorm/entity-manager/EntityManager.d.ts",
         "./node_modules/typeorm/entity-manager/MongoEntityManager.d.ts",
         "./node_modules/typeorm/entity-manager/SqljsEntityManager.d.ts",
@@ -9727,6 +9806,7 @@
         "./node_modules/typeorm/entity-schema/EntitySchemaColumnOptions.d.ts",
         "./node_modules/typeorm/entity-schema/EntitySchemaIndexOptions.d.ts",
         "./node_modules/typeorm/entity-schema/EntitySchemaRelationOptions.d.ts",
+        "./node_modules/typeorm/error/QueryFailedError.d.ts",
         "./node_modules/typeorm/find-options/FindConditions.d.ts",
         "./node_modules/typeorm/find-options/FindManyOptions.d.ts",
         "./node_modules/typeorm/find-options/FindOneOptions.d.ts",
@@ -9735,17 +9815,60 @@
         "./node_modules/typeorm/find-options/FindOptionsUtils.d.ts",
         "./node_modules/typeorm/find-options/JoinOptions.d.ts",
         "./node_modules/typeorm/find-options/OrderByCondition.d.ts",
+        "./node_modules/typeorm/find-options/operator/Any.d.ts",
+        "./node_modules/typeorm/find-options/operator/Between.d.ts",
+        "./node_modules/typeorm/find-options/operator/Equal.d.ts",
+        "./node_modules/typeorm/find-options/operator/In.d.ts",
+        "./node_modules/typeorm/find-options/operator/IsNull.d.ts",
+        "./node_modules/typeorm/find-options/operator/LessThan.d.ts",
+        "./node_modules/typeorm/find-options/operator/LessThanOrEqual.d.ts",
+        "./node_modules/typeorm/find-options/operator/Like.d.ts",
+        "./node_modules/typeorm/find-options/operator/MoreThan.d.ts",
+        "./node_modules/typeorm/find-options/operator/MoreThanOrEqual.d.ts",
+        "./node_modules/typeorm/find-options/operator/Not.d.ts",
+        "./node_modules/typeorm/find-options/operator/Raw.d.ts",
         "./node_modules/typeorm/logger/AdvancedConsoleLogger.d.ts",
         "./node_modules/typeorm/logger/FileLogger.d.ts",
         "./node_modules/typeorm/logger/Logger.d.ts",
         "./node_modules/typeorm/logger/SimpleConsoleLogger.d.ts",
+        "./node_modules/typeorm/metadata-args/MetadataArgsStorage.d.ts",
         "./node_modules/typeorm/metadata/EntityMetadata.d.ts",
         "./node_modules/typeorm/migration/Migration.d.ts",
         "./node_modules/typeorm/migration/MigrationExecutor.d.ts",
         "./node_modules/typeorm/migration/MigrationInterface.d.ts",
         "./node_modules/typeorm/naming-strategy/DefaultNamingStrategy.d.ts",
         "./node_modules/typeorm/naming-strategy/NamingStrategyInterface.d.ts",
-        "./node_modules/typeorm/query-runner/QueryRunner.d.ts"
+        "./node_modules/typeorm/query-builder/Brackets.d.ts",
+        "./node_modules/typeorm/query-builder/DeleteQueryBuilder.d.ts",
+        "./node_modules/typeorm/query-builder/InsertQueryBuilder.d.ts",
+        "./node_modules/typeorm/query-builder/QueryBuilder.d.ts",
+        "./node_modules/typeorm/query-builder/RelationQueryBuilder.d.ts",
+        "./node_modules/typeorm/query-builder/SelectQueryBuilder.d.ts",
+        "./node_modules/typeorm/query-builder/UpdateQueryBuilder.d.ts",
+        "./node_modules/typeorm/query-builder/WhereExpression.d.ts",
+        "./node_modules/typeorm/query-builder/result/DeleteResult.d.ts",
+        "./node_modules/typeorm/query-builder/result/InsertResult.d.ts",
+        "./node_modules/typeorm/query-builder/result/UpdateResult.d.ts",
+        "./node_modules/typeorm/query-runner/QueryRunner.d.ts",
+        "./node_modules/typeorm/repository/AbstractRepository.d.ts",
+        "./node_modules/typeorm/repository/BaseEntity.d.ts",
+        "./node_modules/typeorm/repository/MongoRepository.d.ts",
+        "./node_modules/typeorm/repository/RemoveOptions.d.ts",
+        "./node_modules/typeorm/repository/Repository.d.ts",
+        "./node_modules/typeorm/repository/SaveOptions.d.ts",
+        "./node_modules/typeorm/repository/TreeRepository.d.ts",
+        "./node_modules/typeorm/schema-builder/table/Table.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableCheck.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableColumn.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableExclusion.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableForeignKey.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableIndex.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableUnique.d.ts",
+        "./node_modules/typeorm/subscriber/EntitySubscriberInterface.d.ts",
+        "./node_modules/typeorm/subscriber/event/InsertEvent.d.ts",
+        "./node_modules/typeorm/subscriber/event/LoadEvent.d.ts",
+        "./node_modules/typeorm/subscriber/event/RemoveEvent.d.ts",
+        "./node_modules/typeorm/subscriber/event/UpdateEvent.d.ts"
       ],
       "./node_modules/typeorm/logger/AdvancedConsoleLogger.d.ts": [
         "./node_modules/typeorm/logger/Logger.d.ts",
@@ -9762,6 +9885,13 @@
       "./node_modules/typeorm/logger/SimpleConsoleLogger.d.ts": [
         "./node_modules/typeorm/logger/Logger.d.ts",
         "./node_modules/typeorm/query-runner/QueryRunner.d.ts"
+      ],
+      "./node_modules/typeorm/metadata-args/ColumnMetadataArgs.d.ts": [
+        "./node_modules/typeorm/decorator/options/ColumnOptions.d.ts",
+        "./node_modules/typeorm/metadata-args/types/ColumnMode.d.ts"
+      ],
+      "./node_modules/typeorm/metadata-args/EntityListenerMetadataArgs.d.ts": [
+        "./node_modules/typeorm/metadata/types/EventListenerTypes.d.ts"
       ],
       "./node_modules/typeorm/metadata-args/EntityRepositoryMetadataArgs.d.ts": [
         "./node_modules/typeorm/common/EntityTarget.d.ts"
@@ -9802,9 +9932,19 @@
       "./node_modules/typeorm/metadata-args/RelationIdMetadataArgs.d.ts": [
         "./node_modules/typeorm/query-builder/SelectQueryBuilder.d.ts"
       ],
+      "./node_modules/typeorm/metadata-args/RelationMetadataArgs.d.ts": [
+        "./node_modules/typeorm/decorator/options/RelationOptions.d.ts",
+        "./node_modules/typeorm/metadata/types/PropertyTypeInFunction.d.ts",
+        "./node_modules/typeorm/metadata/types/RelationTypeInFunction.d.ts",
+        "./node_modules/typeorm/metadata/types/RelationTypes.d.ts"
+      ],
       "./node_modules/typeorm/metadata-args/TableMetadataArgs.d.ts": [
         "./node_modules/typeorm/find-options/OrderByCondition.d.ts",
-        "./node_modules/typeorm/index.d.ts"
+        "./node_modules/typeorm/index.d.ts",
+        "./node_modules/typeorm/metadata/types/TableTypes.d.ts"
+      ],
+      "./node_modules/typeorm/metadata-args/TreeMetadataArgs.d.ts": [
+        "./node_modules/typeorm/metadata/types/TreeTypes.d.ts"
       ],
       "./node_modules/typeorm/metadata/CheckMetadata.d.ts": [
         "./node_modules/typeorm/metadata-args/CheckMetadataArgs.d.ts",
@@ -9814,6 +9954,8 @@
       "./node_modules/typeorm/metadata/ColumnMetadata.d.ts": [
         "./node_modules/typeorm/common/ObjectLiteral.d.ts",
         "./node_modules/typeorm/connection/Connection.d.ts",
+        "./node_modules/typeorm/decorator/options/ValueTransformer.d.ts",
+        "./node_modules/typeorm/driver/types/ColumnTypes.d.ts",
         "./node_modules/typeorm/metadata-args/ColumnMetadataArgs.d.ts",
         "./node_modules/typeorm/metadata/EmbeddedMetadata.d.ts",
         "./node_modules/typeorm/metadata/EntityMetadata.d.ts",
@@ -9835,7 +9977,8 @@
         "./node_modules/typeorm/common/ObjectLiteral.d.ts",
         "./node_modules/typeorm/metadata-args/EntityListenerMetadataArgs.d.ts",
         "./node_modules/typeorm/metadata/EmbeddedMetadata.d.ts",
-        "./node_modules/typeorm/metadata/EntityMetadata.d.ts"
+        "./node_modules/typeorm/metadata/EntityMetadata.d.ts",
+        "./node_modules/typeorm/metadata/types/EventListenerTypes.d.ts"
       ],
       "./node_modules/typeorm/metadata/EntityMetadata.d.ts": [
         "./node_modules/typeorm/common/ObjectLiteral.d.ts",
@@ -9854,7 +9997,9 @@
         "./node_modules/typeorm/metadata/RelationCountMetadata.d.ts",
         "./node_modules/typeorm/metadata/RelationIdMetadata.d.ts",
         "./node_modules/typeorm/metadata/RelationMetadata.d.ts",
-        "./node_modules/typeorm/metadata/UniqueMetadata.d.ts"
+        "./node_modules/typeorm/metadata/UniqueMetadata.d.ts",
+        "./node_modules/typeorm/metadata/types/TableTypes.d.ts",
+        "./node_modules/typeorm/metadata/types/TreeTypes.d.ts"
       ],
       "./node_modules/typeorm/metadata/ExclusionMetadata.d.ts": [
         "./node_modules/typeorm/metadata-args/ExclusionMetadataArgs.d.ts",
@@ -9864,6 +10009,9 @@
       "./node_modules/typeorm/metadata/ForeignKeyMetadata.d.ts": [
         "./node_modules/typeorm/metadata/ColumnMetadata.d.ts",
         "./node_modules/typeorm/metadata/EntityMetadata.d.ts",
+        "./node_modules/typeorm/metadata/types/DeferrableType.d.ts",
+        "./node_modules/typeorm/metadata/types/OnDeleteType.d.ts",
+        "./node_modules/typeorm/metadata/types/OnUpdateType.d.ts",
         "./node_modules/typeorm/naming-strategy/NamingStrategyInterface.d.ts"
       ],
       "./node_modules/typeorm/metadata/IndexMetadata.d.ts": [
@@ -9892,7 +10040,12 @@
         "./node_modules/typeorm/metadata/ColumnMetadata.d.ts",
         "./node_modules/typeorm/metadata/EmbeddedMetadata.d.ts",
         "./node_modules/typeorm/metadata/EntityMetadata.d.ts",
-        "./node_modules/typeorm/metadata/ForeignKeyMetadata.d.ts"
+        "./node_modules/typeorm/metadata/ForeignKeyMetadata.d.ts",
+        "./node_modules/typeorm/metadata/types/DeferrableType.d.ts",
+        "./node_modules/typeorm/metadata/types/OnDeleteType.d.ts",
+        "./node_modules/typeorm/metadata/types/OnUpdateType.d.ts",
+        "./node_modules/typeorm/metadata/types/PropertyTypeInFunction.d.ts",
+        "./node_modules/typeorm/metadata/types/RelationTypes.d.ts"
       ],
       "./node_modules/typeorm/metadata/UniqueMetadata.d.ts": [
         "./node_modules/typeorm/metadata-args/UniqueMetadataArgs.d.ts",
@@ -9913,7 +10066,11 @@
         "./node_modules/typeorm/query-runner/QueryRunner.d.ts"
       ],
       "./node_modules/typeorm/naming-strategy/DefaultNamingStrategy.d.ts": [
-        "./node_modules/typeorm/naming-strategy/NamingStrategyInterface.d.ts"
+        "./node_modules/typeorm/naming-strategy/NamingStrategyInterface.d.ts",
+        "./node_modules/typeorm/schema-builder/table/Table.d.ts"
+      ],
+      "./node_modules/typeorm/naming-strategy/NamingStrategyInterface.d.ts": [
+        "./node_modules/typeorm/schema-builder/table/Table.d.ts"
       ],
       "./node_modules/typeorm/platform/PlatformTools.d.ts": [
         "./node_modules/@types/node/events.d.ts",
@@ -9933,6 +10090,7 @@
         "./node_modules/typeorm/query-builder/Brackets.d.ts",
         "./node_modules/typeorm/query-builder/QueryBuilder.d.ts",
         "./node_modules/typeorm/query-builder/WhereExpression.d.ts",
+        "./node_modules/typeorm/query-builder/result/DeleteResult.d.ts",
         "./node_modules/typeorm/query-runner/QueryRunner.d.ts"
       ],
       "./node_modules/typeorm/query-builder/InsertQueryBuilder.d.ts": [
@@ -9940,7 +10098,8 @@
         "./node_modules/typeorm/common/ObjectLiteral.d.ts",
         "./node_modules/typeorm/metadata/ColumnMetadata.d.ts",
         "./node_modules/typeorm/query-builder/QueryBuilder.d.ts",
-        "./node_modules/typeorm/query-builder/QueryPartialEntity.d.ts"
+        "./node_modules/typeorm/query-builder/QueryPartialEntity.d.ts",
+        "./node_modules/typeorm/query-builder/result/InsertResult.d.ts"
       ],
       "./node_modules/typeorm/query-builder/JoinAttribute.d.ts": [
         "./node_modules/typeorm/connection/Connection.d.ts",
@@ -9978,7 +10137,9 @@
         "./node_modules/typeorm/query-builder/JoinAttribute.d.ts",
         "./node_modules/typeorm/query-builder/QueryBuilder.d.ts",
         "./node_modules/typeorm/query-builder/SelectQuery.d.ts",
-        "./node_modules/typeorm/query-builder/SelectQueryBuilderOption.d.ts"
+        "./node_modules/typeorm/query-builder/SelectQueryBuilderOption.d.ts",
+        "./node_modules/typeorm/query-builder/relation-count/RelationCountAttribute.d.ts",
+        "./node_modules/typeorm/query-builder/relation-id/RelationIdAttribute.d.ts"
       ],
       "./node_modules/typeorm/query-builder/RelationIdLoader.d.ts": [
         "./node_modules/typeorm/index.d.ts",
@@ -10013,6 +10174,7 @@
         "./node_modules/typeorm/query-builder/Brackets.d.ts",
         "./node_modules/typeorm/query-builder/QueryBuilder.d.ts",
         "./node_modules/typeorm/query-builder/WhereExpression.d.ts",
+        "./node_modules/typeorm/query-builder/result/UpdateResult.d.ts",
         "./node_modules/typeorm/query-runner/QueryRunner.d.ts"
       ],
       "./node_modules/typeorm/query-builder/UpdateQueryBuilder.d.ts": [
@@ -10023,6 +10185,7 @@
         "./node_modules/typeorm/query-builder/QueryBuilder.d.ts",
         "./node_modules/typeorm/query-builder/QueryPartialEntity.d.ts",
         "./node_modules/typeorm/query-builder/WhereExpression.d.ts",
+        "./node_modules/typeorm/query-builder/result/UpdateResult.d.ts",
         "./node_modules/typeorm/query-runner/QueryRunner.d.ts"
       ],
       "./node_modules/typeorm/query-builder/WhereExpression.d.ts": [
@@ -10055,8 +10218,17 @@
         "./node_modules/typeorm/common/ObjectLiteral.d.ts",
         "./node_modules/typeorm/connection/Connection.d.ts",
         "./node_modules/typeorm/driver/SqlInMemory.d.ts",
+        "./node_modules/typeorm/driver/types/IsolationLevel.d.ts",
         "./node_modules/typeorm/entity-manager/EntityManager.d.ts",
         "./node_modules/typeorm/platform/PlatformTools.d.ts",
+        "./node_modules/typeorm/schema-builder/table/Table.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableCheck.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableColumn.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableExclusion.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableForeignKey.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableIndex.d.ts",
+        "./node_modules/typeorm/schema-builder/table/TableUnique.d.ts",
+        "./node_modules/typeorm/schema-builder/view/View.d.ts",
         "./node_modules/typeorm/subscriber/Broadcaster.d.ts"
       ],
       "./node_modules/typeorm/repository/AbstractRepository.d.ts": [
@@ -10086,6 +10258,7 @@
       ],
       "./node_modules/typeorm/repository/MongoRepository.d.ts": [
         "./node_modules/typeorm/common/ObjectLiteral.d.ts",
+        "./node_modules/typeorm/driver/mongodb/typings.d.ts",
         "./node_modules/typeorm/entity-manager/MongoEntityManager.d.ts",
         "./node_modules/typeorm/find-options/FindManyOptions.d.ts",
         "./node_modules/typeorm/find-options/FindOneOptions.d.ts",
@@ -10096,6 +10269,7 @@
       "./node_modules/typeorm/repository/Repository.d.ts": [
         "./node_modules/typeorm/common/DeepPartial.d.ts",
         "./node_modules/typeorm/common/ObjectLiteral.d.ts",
+        "./node_modules/typeorm/driver/mongodb/typings.d.ts",
         "./node_modules/typeorm/entity-manager/EntityManager.d.ts",
         "./node_modules/typeorm/find-options/FindConditions.d.ts",
         "./node_modules/typeorm/find-options/FindManyOptions.d.ts",
@@ -10103,6 +10277,9 @@
         "./node_modules/typeorm/metadata/EntityMetadata.d.ts",
         "./node_modules/typeorm/query-builder/QueryPartialEntity.d.ts",
         "./node_modules/typeorm/query-builder/SelectQueryBuilder.d.ts",
+        "./node_modules/typeorm/query-builder/result/DeleteResult.d.ts",
+        "./node_modules/typeorm/query-builder/result/InsertResult.d.ts",
+        "./node_modules/typeorm/query-builder/result/UpdateResult.d.ts",
         "./node_modules/typeorm/query-runner/QueryRunner.d.ts",
         "./node_modules/typeorm/repository/RemoveOptions.d.ts",
         "./node_modules/typeorm/repository/SaveOptions.d.ts"
@@ -10171,6 +10348,12 @@
         "./node_modules/typeorm/query-runner/QueryRunner.d.ts",
         "./node_modules/typeorm/subscriber/BroadcasterResult.d.ts",
         "./node_modules/typeorm/subscriber/EntitySubscriberInterface.d.ts"
+      ],
+      "./node_modules/typeorm/subscriber/EntitySubscriberInterface.d.ts": [
+        "./node_modules/typeorm/subscriber/event/InsertEvent.d.ts",
+        "./node_modules/typeorm/subscriber/event/LoadEvent.d.ts",
+        "./node_modules/typeorm/subscriber/event/RemoveEvent.d.ts",
+        "./node_modules/typeorm/subscriber/event/UpdateEvent.d.ts"
       ],
       "./node_modules/typeorm/subscriber/event/InsertEvent.d.ts": [
         "./node_modules/typeorm/connection/Connection.d.ts",

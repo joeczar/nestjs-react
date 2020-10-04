@@ -9,6 +9,8 @@ import { ConfigModule } from '@nestjs/config';
 import Joi from '@hapi/joi';
 import { DatabaseModule } from './database/database.module';
 import { AuthController } from './auth/auth.controller';
+import { JwtService } from '@nestjs/jwt';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -27,7 +29,7 @@ import { AuthController } from './auth/auth.controller';
     AuthModule,
     UserModule,
   ],
-  controllers: [AppController, AuthController],
-  providers: [],
+  controllers: [AuthController, AppController],
+  providers: [AppService, AuthService],
 })
 export class AppModule {}
