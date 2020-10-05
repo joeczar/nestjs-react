@@ -17,7 +17,8 @@ import JwtAuthGuard from './jwtAuth.guard';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor (private readonly authService: AuthService) { }
+  
   @UseGuards(JwtAuthGuard)
   @Get()
   authenticate(@Req() request: RequestWithUser) {
@@ -26,8 +27,17 @@ export class AuthController {
     return user;
   }
   @Post('register')
-  async register(@Body() registrationData: RegisterDto) {
-    return this.authService.register(registrationData);
+  async register(@Body() registrationData: RegisterDto, @Res() res: Response) {
+    try {
+      const userId = await this.authService.register(registrationData);
+      if (userId) {
+        return res.redirect('/auth/log-in')
+      }
+    } catch (error) {
+      return res.json({ msg: 'Error in POST /register', error });
+      console.log('Error in POST /register', error);
+      
+    }
   }
 
   @HttpCode(200)

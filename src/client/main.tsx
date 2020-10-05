@@ -9,7 +9,11 @@ import WelcomeLanding from './components/welcome/welcomeLanding';
 
 
 let elem;
-let isLoggedIn = location.pathname !== '/welcome';
+const path = location.pathname.split('/');
+console.log(path);
+
+let isLoggedIn = path[1] !== 'welcome';
+
 // let isLoggedIn = true;
 if (isLoggedIn) {
   
