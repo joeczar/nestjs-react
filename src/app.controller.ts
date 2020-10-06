@@ -15,9 +15,9 @@ export class AppController {
     const { user } = request;
 
     if (user) {
-                res.redirect('/');
-                return;
-              }
+      res.redirect('/');
+      return;
+    }
   }
 
   @UseGuards(JwtAuthGuard)

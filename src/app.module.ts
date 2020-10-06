@@ -11,6 +11,7 @@ import { DatabaseModule } from './database/database.module';
 import { AuthController } from './auth/auth.controller';
 import { JwtService } from '@nestjs/jwt';
 import { UserController } from './user/user.controller';
+import { EmailService } from './email/email.service';
 
 @Module({
   imports: [
@@ -31,6 +32,6 @@ import { UserController } from './user/user.controller';
     UserModule,
   ],
   controllers: [UserController, AuthController, AppController],
-  providers: [AuthService, AppService],
+  providers: [AuthService, AppService, EmailService],
 })
 export class AppModule {}

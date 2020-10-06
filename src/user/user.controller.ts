@@ -9,4 +9,5 @@ export class UserController {
   getAll(@Res() res: Response) {
     return res.json(this.userService.getAll());
   }
+
 }
