@@ -9,9 +9,9 @@ import { ConfigModule } from '@nestjs/config';
 import Joi from '@hapi/joi';
 import { DatabaseModule } from './database/database.module';
 import { AuthController } from './auth/auth.controller';
-import { JwtService } from '@nestjs/jwt';
 import { UserController } from './user/user.controller';
 import { EmailService } from './email/email.service';
+import { EmailModule } from './email/email.module';
 
 @Module({
   imports: [
@@ -25,13 +25,16 @@ import { EmailService } from './email/email.service';
         JWT_SECRET: Joi.string().required(),
         JWT_EXPIRATION_TIME: Joi.string().required(),
         PORT: Joi.number(),
+        MAILDEV_INCOMING_USER:Joi.string().required(),
+        MAILDEV_INCOMING_PASS: Joi.string().required()
       }),
     }),
     DatabaseModule,
     AuthModule,
     UserModule,
+    EmailModule,
   ],
   controllers: [UserController, AuthController, AppController],
-  providers: [AuthService, AppService, EmailService],
+  providers: [EmailService, AuthService, AppService, ],
 })
 export class AppModule {}

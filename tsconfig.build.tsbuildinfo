@@ -3567,8 +3567,8 @@
         "affectsGlobalScope": false
       },
       "./src/auth/auth.service.ts": {
-        "version": "5974078fba7b95aa338c1aa4e4a631d1362502d09c4392a6369c621bef1f4faf",
-        "signature": "9ffe2d4932f0e69829a39fe0a6f15ef87f523ed7a6a9c9b0aeb52e8753908813",
+        "version": "08c96e86d2d02f12d7fa910747d2091754265eb383aa1b39d365beb0b5f509a3",
+        "signature": "b07dbff3c5ec37fe4b11cff44a53687ff41a72e4a8c8fa81a835dfc23d6b206c",
         "affectsGlobalScope": false
       },
       "./src/auth/localAuth.guard.ts": {
@@ -3746,8 +3746,18 @@
         "signature": "d2cb90fd3ca025bf621417e8d79d0e166b213a18e6ab02a782e96ce50612b62e",
         "affectsGlobalScope": false
       },
+      "./node_modules/@nestjs-modules/mailer/dist/adapters/ejs.adapter.d.ts": {
+        "version": "2c1e53f41351ec46fc0a770db099e3b22378719f470909736319f597bb72db4e",
+        "signature": "2c1e53f41351ec46fc0a770db099e3b22378719f470909736319f597bb72db4e",
+        "affectsGlobalScope": false
+      },
+      "./src/email/email.module.ts": {
+        "version": "0563f67632b820344edf48f8beecfd2aaab0196ae90f225bfba00539d8899fb7",
+        "signature": "67bd55d3d22f58f0389c02b2c77cb8a0870857d4f1aebee88c8a30a2dacd3053",
+        "affectsGlobalScope": false
+      },
       "./src/app.module.ts": {
-        "version": "7a7c20b0067b0b7383b7e11555753da3ea301a84978eb97231f6b536e5094a03",
+        "version": "119c3d3ffa7791f3a0439fde6d157887ca57e5b6216b192d94395aaf8ebdbc66",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -5843,6 +5853,10 @@
     "referencedMap": {
       "./node_modules/@babel/parser/typings/babel-parser.d.ts": [
         "./node_modules/@babel/types/lib/index.d.ts"
+      ],
+      "./node_modules/@nestjs-modules/mailer/dist/adapters/ejs.adapter.d.ts": [
+        "./node_modules/@nestjs-modules/mailer/dist/interfaces/mailer-options.interface.d.ts",
+        "./node_modules/@nestjs-modules/mailer/dist/interfaces/template-adapter.interface.d.ts"
       ],
       "./node_modules/@nestjs-modules/mailer/dist/index.d.ts": [
         "./node_modules/@nestjs-modules/mailer/dist/interfaces/mailer-options-factory.interface.d.ts",
@@ -11193,7 +11207,6 @@
       "./src/app.module.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
         "./node_modules/@nestjs/config/index.d.ts",
-        "./node_modules/@nestjs/jwt/index.d.ts",
         "./node_modules/@types/hapi__joi/index.d.ts",
         "./src/app.controller.ts",
         "./src/app.service.ts",
@@ -11201,6 +11214,7 @@
         "./src/auth/auth.module.ts",
         "./src/auth/auth.service.ts",
         "./src/database/database.module.ts",
+        "./src/email/email.module.ts",
         "./src/email/email.service.ts",
         "./src/user/user.controller.ts",
         "./src/user/user.module.ts",
@@ -11282,6 +11296,13 @@
         "./node_modules/@nestjs/typeorm/index.d.ts",
         "./src/user/user.module.ts"
       ],
+      "./src/email/email.module.ts": [
+        "./node_modules/@nestjs-modules/mailer/dist/adapters/ejs.adapter.d.ts",
+        "./node_modules/@nestjs-modules/mailer/index.d.ts",
+        "./node_modules/@nestjs/common/index.d.ts",
+        "./node_modules/@nestjs/config/dist/config.module.d.ts",
+        "./node_modules/@nestjs/config/index.d.ts"
+      ],
       "./src/email/email.service.ts": [
         "./node_modules/@nestjs-modules/mailer/index.d.ts",
         "./node_modules/@nestjs/common/index.d.ts"
@@ -11322,6 +11343,10 @@
     "exportedModulesMap": {
       "./node_modules/@babel/parser/typings/babel-parser.d.ts": [
         "./node_modules/@babel/types/lib/index.d.ts"
+      ],
+      "./node_modules/@nestjs-modules/mailer/dist/adapters/ejs.adapter.d.ts": [
+        "./node_modules/@nestjs-modules/mailer/dist/interfaces/mailer-options.interface.d.ts",
+        "./node_modules/@nestjs-modules/mailer/dist/interfaces/template-adapter.interface.d.ts"
       ],
       "./node_modules/@nestjs-modules/mailer/dist/index.d.ts": [
         "./node_modules/@nestjs-modules/mailer/dist/interfaces/mailer-options-factory.interface.d.ts",
@@ -16705,6 +16730,7 @@
     "semanticDiagnosticsPerFile": [
       "./node_modules/@babel/parser/typings/babel-parser.d.ts",
       "./node_modules/@babel/types/lib/index.d.ts",
+      "./node_modules/@nestjs-modules/mailer/dist/adapters/ejs.adapter.d.ts",
       "./node_modules/@nestjs-modules/mailer/dist/index.d.ts",
       "./node_modules/@nestjs-modules/mailer/dist/interfaces/mailer-async-options.interface.d.ts",
       "./node_modules/@nestjs-modules/mailer/dist/interfaces/mailer-options-factory.interface.d.ts",
@@ -17859,6 +17885,7 @@
       "./src/config/ormconfig.ts",
       "./src/database/database.module.ts",
       "./src/database/postgresErrorCode.enum.ts",
+      "./src/email/email.module.ts",
       "./src/email/email.service.ts",
       "./src/main.ts",
       "./src/middleware/auth.middleware.ts",
