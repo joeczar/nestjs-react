@@ -4086,6 +4086,16 @@
         "signature": "e7ef01fb3213b1be13321648ac2612d60e9e2742e28fc2fcf68d27fb965a8d5c",
         "affectsGlobalScope": false
       },
+      "./node_modules/@types/ioredis/index.d.ts": {
+        "version": "29f1c2712188aa2ec6c1f539b8d6b38a97a25b87a2eac19125fd111504472d23",
+        "signature": "29f1c2712188aa2ec6c1f539b8d6b38a97a25b87a2eac19125fd111504472d23",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/@types/bull/index.d.ts": {
+        "version": "4bcab1df2af5273915fa12cc9baf692121768f2bb8b1a8d4c1fa0359d8aac77c",
+        "signature": "4bcab1df2af5273915fa12cc9baf692121768f2bb8b1a8d4c1fa0359d8aac77c",
+        "affectsGlobalScope": false
+      },
       "./node_modules/@types/color-name/index.d.ts": {
         "version": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e",
         "signature": "f0cb4b3ab88193e3e51e9e2622e4c375955003f1f81239d72c5b7a95415dad3e",
@@ -5810,16 +5820,6 @@
         "version": "f0ed104b5564e9fda6de99e1f489207e7aad5bdf3f7c679aa327756d1f0a90a5",
         "signature": "f0ed104b5564e9fda6de99e1f489207e7aad5bdf3f7c679aa327756d1f0a90a5",
         "affectsGlobalScope": false
-      },
-      "../../node_modules/@types/express/index.d.ts": {
-        "version": "088d420a09a36d241f1ddbdcb553951c02ef0844014727a29712d2ced57edd22",
-        "signature": "088d420a09a36d241f1ddbdcb553951c02ef0844014727a29712d2ced57edd22",
-        "affectsGlobalScope": false
-      },
-      "../../node_modules/@types/cors/index.d.ts": {
-        "version": "f6283751acbb93a4ade61ab11ee4bb7139b12c5aa6307f5b89f058af60eec332",
-        "signature": "f6283751acbb93a4ade61ab11ee4bb7139b12c5aa6307f5b89f058af60eec332",
-        "affectsGlobalScope": false
       }
     },
     "options": {
@@ -6725,6 +6725,10 @@
         "./node_modules/@types/node/http.d.ts",
         "./node_modules/@types/node/index.d.ts"
       ],
+      "./node_modules/@types/bull/index.d.ts": [
+        "./node_modules/@types/ioredis/index.d.ts",
+        "./node_modules/@types/node/events.d.ts"
+      ],
       "./node_modules/@types/connect/index.d.ts": [
         "./node_modules/@types/node/http.d.ts",
         "./node_modules/@types/node/index.d.ts"
@@ -6773,6 +6777,12 @@
         "./node_modules/@types/history/createBrowserHistory.d.ts",
         "./node_modules/@types/history/createHashHistory.d.ts",
         "./node_modules/@types/history/createMemoryHistory.d.ts"
+      ],
+      "./node_modules/@types/ioredis/index.d.ts": [
+        "./node_modules/@types/node/events.d.ts",
+        "./node_modules/@types/node/index.d.ts",
+        "./node_modules/@types/node/stream.d.ts",
+        "./node_modules/@types/node/tls.d.ts"
       ],
       "./node_modules/@types/istanbul-lib-report/index.d.ts": [
         "./node_modules/@types/istanbul-lib-coverage/index.d.ts"
@@ -11307,15 +11317,6 @@
         "./node_modules/typeorm/index.d.ts",
         "./src/user/dto/createUser.dto.ts",
         "./src/user/user.entity.ts"
-      ],
-      "../../node_modules/@types/cors/index.d.ts": [
-        "./node_modules/@types/express/index.d.ts"
-      ],
-      "../../node_modules/@types/express/index.d.ts": [
-        "./node_modules/@types/body-parser/index.d.ts",
-        "./node_modules/@types/express-serve-static-core/index.d.ts",
-        "./node_modules/@types/qs/index.d.ts",
-        "./node_modules/@types/serve-static/index.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -12203,6 +12204,10 @@
         "./node_modules/@types/node/http.d.ts",
         "./node_modules/@types/node/index.d.ts"
       ],
+      "./node_modules/@types/bull/index.d.ts": [
+        "./node_modules/@types/ioredis/index.d.ts",
+        "./node_modules/@types/node/events.d.ts"
+      ],
       "./node_modules/@types/connect/index.d.ts": [
         "./node_modules/@types/node/http.d.ts",
         "./node_modules/@types/node/index.d.ts"
@@ -12251,6 +12256,12 @@
         "./node_modules/@types/history/createBrowserHistory.d.ts",
         "./node_modules/@types/history/createHashHistory.d.ts",
         "./node_modules/@types/history/createMemoryHistory.d.ts"
+      ],
+      "./node_modules/@types/ioredis/index.d.ts": [
+        "./node_modules/@types/node/events.d.ts",
+        "./node_modules/@types/node/index.d.ts",
+        "./node_modules/@types/node/stream.d.ts",
+        "./node_modules/@types/node/tls.d.ts"
       ],
       "./node_modules/@types/istanbul-lib-report/index.d.ts": [
         "./node_modules/@types/istanbul-lib-coverage/index.d.ts"
@@ -16689,15 +16700,6 @@
         "./node_modules/typeorm/index.d.ts",
         "./src/user/dto/createUser.dto.ts",
         "./src/user/user.entity.ts"
-      ],
-      "../../node_modules/@types/cors/index.d.ts": [
-        "./node_modules/@types/express/index.d.ts"
-      ],
-      "../../node_modules/@types/express/index.d.ts": [
-        "./node_modules/@types/body-parser/index.d.ts",
-        "./node_modules/@types/express-serve-static-core/index.d.ts",
-        "./node_modules/@types/qs/index.d.ts",
-        "./node_modules/@types/serve-static/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -16944,6 +16946,7 @@
       "./node_modules/@types/babylon/index.d.ts",
       "./node_modules/@types/bcrypt/index.d.ts",
       "./node_modules/@types/body-parser/index.d.ts",
+      "./node_modules/@types/bull/index.d.ts",
       "./node_modules/@types/color-name/index.d.ts",
       "./node_modules/@types/connect/index.d.ts",
       "./node_modules/@types/cookie-parser/index.d.ts",
@@ -16961,6 +16964,7 @@
       "./node_modules/@types/history/createHashHistory.d.ts",
       "./node_modules/@types/history/createMemoryHistory.d.ts",
       "./node_modules/@types/history/index.d.ts",
+      "./node_modules/@types/ioredis/index.d.ts",
       "./node_modules/@types/istanbul-lib-coverage/index.d.ts",
       "./node_modules/@types/istanbul-lib-report/index.d.ts",
       "./node_modules/@types/istanbul-reports/index.d.ts",
@@ -17862,9 +17866,7 @@
       "./src/user/user.controller.ts",
       "./src/user/user.entity.ts",
       "./src/user/user.module.ts",
-      "./src/user/user.service.ts",
-      "../../node_modules/@types/cors/index.d.ts",
-      "../../node_modules/@types/express/index.d.ts"
+      "./src/user/user.service.ts"
     ]
   },
   "version": "3.9.7"
