@@ -6,29 +6,26 @@ import RequestWithUser from './auth/requestWithUser.interface';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Get('/welcome*')
   @Render('index')
   getWelcome(@Req() request: RequestWithUser, @Res() res: Response) {
     const { user } = request;
-
     if (user) {
-                res.redirect('/');
-                return;
-              }
+      return res.redirect('/');
+    }
   }
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Get('*')
   @Render('index')
   authenticate(@Req() request: RequestWithUser, @Res() res: Response) {
     const { user } = request;
-
     if (user) {
     } else {
-      res.redirect('/welcome');
+      return res.redirect('/welcome');
     }
     // return user;
   }

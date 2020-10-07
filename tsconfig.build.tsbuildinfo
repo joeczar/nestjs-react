@@ -2772,7 +2772,7 @@
         "affectsGlobalScope": false
       },
       "./src/app.controller.ts": {
-        "version": "4ffee0e6d7c05ddcefd2d4a7ca4d6a4d7588426f73b2476e48a47ef09014577b",
+        "version": "bbb33afd1dc4bc8499705189420d7fbc89ef00a808676508cad57145e6a2d2fc",
         "signature": "e8dd15bc7ec2c112ed4b3cecfcda7e65d5a5c51fa4fc6ff94063d55105ab92de",
         "affectsGlobalScope": false
       },
@@ -3567,8 +3567,8 @@
         "affectsGlobalScope": false
       },
       "./src/auth/auth.service.ts": {
-        "version": "5974078fba7b95aa338c1aa4e4a631d1362502d09c4392a6369c621bef1f4faf",
-        "signature": "9ffe2d4932f0e69829a39fe0a6f15ef87f523ed7a6a9c9b0aeb52e8753908813",
+        "version": "08c96e86d2d02f12d7fa910747d2091754265eb383aa1b39d365beb0b5f509a3",
+        "signature": "b07dbff3c5ec37fe4b11cff44a53687ff41a72e4a8c8fa81a835dfc23d6b206c",
         "affectsGlobalScope": false
       },
       "./src/auth/localAuth.guard.ts": {
@@ -4239,16 +4239,6 @@
       "./node_modules/@types/yargs/index.d.ts": {
         "version": "f0ed104b5564e9fda6de99e1f489207e7aad5bdf3f7c679aa327756d1f0a90a5",
         "signature": "f0ed104b5564e9fda6de99e1f489207e7aad5bdf3f7c679aa327756d1f0a90a5",
-        "affectsGlobalScope": false
-      },
-      "../../node_modules/@types/express/index.d.ts": {
-        "version": "088d420a09a36d241f1ddbdcb553951c02ef0844014727a29712d2ced57edd22",
-        "signature": "088d420a09a36d241f1ddbdcb553951c02ef0844014727a29712d2ced57edd22",
-        "affectsGlobalScope": false
-      },
-      "../../node_modules/@types/cors/index.d.ts": {
-        "version": "f6283751acbb93a4ade61ab11ee4bb7139b12c5aa6307f5b89f058af60eec332",
-        "signature": "f6283751acbb93a4ade61ab11ee4bb7139b12c5aa6307f5b89f058af60eec332",
         "affectsGlobalScope": false
       }
     },
@@ -7452,15 +7442,6 @@
         "./node_modules/typeorm/index.d.ts",
         "./src/user/dto/createUser.dto.ts",
         "./src/user/user.entity.ts"
-      ],
-      "../../node_modules/@types/cors/index.d.ts": [
-        "./node_modules/@types/express/index.d.ts"
-      ],
-      "../../node_modules/@types/express/index.d.ts": [
-        "./node_modules/@types/body-parser/index.d.ts",
-        "./node_modules/@types/express-serve-static-core/index.d.ts",
-        "./node_modules/@types/qs/index.d.ts",
-        "./node_modules/@types/serve-static/index.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -10571,15 +10552,6 @@
         "./node_modules/typeorm/index.d.ts",
         "./src/user/dto/createUser.dto.ts",
         "./src/user/user.entity.ts"
-      ],
-      "../../node_modules/@types/cors/index.d.ts": [
-        "./node_modules/@types/express/index.d.ts"
-      ],
-      "../../node_modules/@types/express/index.d.ts": [
-        "./node_modules/@types/body-parser/index.d.ts",
-        "./node_modules/@types/express-serve-static-core/index.d.ts",
-        "./node_modules/@types/qs/index.d.ts",
-        "./node_modules/@types/serve-static/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -11430,9 +11402,7 @@
       "./src/user/user.controller.ts",
       "./src/user/user.entity.ts",
       "./src/user/user.module.ts",
-      "./src/user/user.service.ts",
-      "../../node_modules/@types/cors/index.d.ts",
-      "../../node_modules/@types/express/index.d.ts"
+      "./src/user/user.service.ts"
     ]
   },
   "version": "3.9.7"
