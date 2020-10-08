@@ -1,38 +1,36 @@
-import { Controller, Get, Render, Req, Res } from '@nestjs/common';
+import { Controller, Get, Render, Req, Res, UseGuards } from '@nestjs/common';
 import { Response } from 'express';
 import { AppService } from './app.service';
-import { AuthService } from './auth/auth.service';
+import JwtAuthGuard from './auth/jwtAuth.guard';
 import RequestWithUser from './auth/requestWithUser.interface';
 
 @Controller()
 export class AppController {
-  constructor(
-    private readonly appService: AppService,
-    private readonly authService: AuthService,
-  ) {}
-  @Get('/welcome')
+  constructor(private readonly appService: AppService) { }
+
+  // @UseGuards(JwtAuthGuard)
+  @Get(['welcome', 'welcome/register', 'welcome/log-in'])
   @Render('index')
-  getWelcome(@Req() request: RequestWithUser, @Res() res: Response) {
+  async getWelcome(@Req() request: RequestWithUser, @Res() res: Response) {
     const { user } = request;
-
     if (user) {
-      user.password = 'undefined';
-      res.redirect('/');
-      return user
-    } 
-    
+      
+      return res.redirect('/');
+    }
   }
-
+  // Without the guard here both routes are triggeres at anything past /welcome causing an unhandled rejection error
+  // also need a redirect in the guard otherwise It just shows an error
+  @UseGuards(JwtAuthGuard)
   @Get('*')
   @Render('index')
   authenticate(@Req() request: RequestWithUser, @Res() res: Response) {
     const { user } = request;
-
+    console.log('====================================');
+    console.log(user);
+    console.log('====================================');
     if (user) {
-      user.password = 'undefined';
-      return user;
     } else {
-      res.redirect('/welcome');
+      return res.redirect('/welcome');
     }
     // return user;
   }

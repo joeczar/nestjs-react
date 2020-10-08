@@ -2,11 +2,12 @@ import { Controller, Get, Res } from '@nestjs/common';
 import { Response } from 'express';
 import { UserService } from './user.service';
 
-@Controller('user')
+@Controller('api/user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
   @Get()
-  getAll(@Res() res: Response) {
-    return res.json(this.userService.getAll());
+  async getAll(@Res() res: Response) {
+    const users = await this.userService.getAll();
+    return res.json(users)
   }
 }

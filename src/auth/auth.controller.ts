@@ -8,7 +8,7 @@ import {
   Res,
   Get,
 } from '@nestjs/common';
-import { Response } from 'express';
+import { response, Response } from 'express';
 import { AuthService } from './auth.service';
 import RegisterDto from './dto/register.dto';
 import RequestWithUser from './requestWithUser.interface';
@@ -17,7 +17,7 @@ import JwtAuthGuard from './jwtAuth.guard';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(private readonly authService: AuthService) { }
   @UseGuards(JwtAuthGuard)
   @Get()
   authenticate(@Req() request: RequestWithUser) {
@@ -26,24 +26,43 @@ export class AuthController {
     return user;
   }
   @Post('register')
-  async register(@Body() registrationData: RegisterDto) {
-    return this.authService.register(registrationData);
+  async register(@Body() registrationData: RegisterDto, @Res() res: Response) {
+    try {
+      const authorized = await this.authService.register(registrationData);
+      return res.json(authorized).redirect('/');
+    } catch (error) {
+      console.log('Error in registration', error);
+      return res.json({error})
+    }
+    
   }
 
   @HttpCode(200)
-  @UseGuards(LocalAuthGuard)
+  // @UseGuards(LocalAuthGuard)
   @Post('log-in')
-  async logIn(@Req() request: RequestWithUser, @Res() response: Response) {
-    const { user } = request;
-    const cookie = this.authService.getCookieWithJwtToken(user.id);
-    response.setHeader('Set-Cookie', cookie);
-    user.password = 'undefined';
-    return response.send(user);
+  async logIn(@Req() req: RequestWithUser, @Res() res: Response) {
+    try {
+      let { email, password } = req.body;
+      const authorized = await this.authService.getAuthenticatedUser(email, password)
+      console.log(authorized);
+
+      password = 'undefined';
+      const cookie = this.authService.getCookieWithJwtToken(authorized.id);
+      res.setHeader('Set-Cookie', cookie);
+      // 
+      return res.json(authorized).redirect('/');
+
+    } catch (error) {
+      console.log('Error in /auth/log-in', error);
+      res.json({error})
+      
+    }
+
   }
   @UseGuards(JwtAuthGuard)
-  @Post('log-out')
+  @Get('log-out')
   async logOut(@Req() request: RequestWithUser, @Res() response: Response) {
     response.setHeader('Set-Cookie', this.authService.getCookieForLogOut());
-    return response.sendStatus(200);
+    return response.sendStatus(200).json({success: true, loggenIn:false});
   }
 }
