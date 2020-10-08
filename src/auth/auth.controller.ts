@@ -8,11 +8,10 @@ import {
   Res,
   Get,
 } from '@nestjs/common';
-import { response, Response } from 'express';
+import { Response } from 'express';
 import { AuthService } from './auth.service';
 import RegisterDto from './dto/register.dto';
 import RequestWithUser from './requestWithUser.interface';
-import { LocalAuthGuard } from './localAuth.guard';
 import JwtAuthGuard from './jwtAuth.guard';
 
 @Controller('auth')
@@ -29,12 +28,11 @@ export class AuthController {
   async register(@Body() registrationData: RegisterDto, @Res() res: Response) {
     try {
       const authorized = await this.authService.register(registrationData);
-      return res.json(authorized).redirect('/');
+      return res.json(authorized);
     } catch (error) {
       console.log('Error in registration', error);
       return res.json({error})
     }
-    
   }
 
   @HttpCode(200)
@@ -61,8 +59,8 @@ export class AuthController {
   }
   @UseGuards(JwtAuthGuard)
   @Get('log-out')
-  async logOut(@Req() request: RequestWithUser, @Res() response: Response) {
-    response.setHeader('Set-Cookie', this.authService.getCookieForLogOut());
-    return response.sendStatus(200).json({success: true, loggenIn:false});
+  async logOut(@Req() req: RequestWithUser, @Res() res: Response) {
+    res.setHeader('Set-Cookie', this.authService.getCookieForLogOut());
+    return res.redirect('/welcome');
   }
 }

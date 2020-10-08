@@ -85,4 +85,11 @@ export class AuthService {
   public getCookieForLogOut() {
     return `Authentication=; HttpOnly; Path=/; Max-Age=0`;
   }
+  public verifyToken(token:string){
+    const verified = this.jwtService.verify(token)
+    if (verified.userId) {
+      return true
+    }
+    
+  }
 }
