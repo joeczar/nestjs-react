@@ -9,8 +9,10 @@ export class AuthExceptionFilter implements ExceptionFilter {
     const request = ctx.getRequest<Request>();
     const status = exception.getStatus();
     console.log(request.url);
-    
-    response.redirect('/welcome')
+    if (!request.cookies.Authentication){
+      response.redirect('/welcome')
+    }
+    // 
       // .status(status)
       // .json({
       //   statusCode: status,

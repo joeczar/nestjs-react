@@ -4,6 +4,10 @@
     padding: 2em;
     border: 1px solid silver;
     border-radius: 1em;
-
+    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: lighter;
     text-align: center;
+}
+a {
+    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
 }

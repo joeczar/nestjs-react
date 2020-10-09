@@ -7,7 +7,7 @@ const WelcomeLanding = () => {
   return (
     
     <Router basename="/welcome">
-      <div>
+      <div className="App">
         <h1>Welcome</h1>
         <Link to="/register">Register</Link>{" "}
         <Link to="/log-in">Log in</Link>

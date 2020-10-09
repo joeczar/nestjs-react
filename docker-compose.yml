@@ -11,7 +11,20 @@ services:
     - docker.env
     networks:
     - postgres
+  redis:
+    container_name: redis
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - redisdata:/data/db
+    networks:
+      - postgres
  
 networks:
   postgres:
     driver: bridge
+
+volumes:
+  redisdata:
+    driver: local

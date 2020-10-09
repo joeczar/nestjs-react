@@ -11,6 +11,8 @@ import { DatabaseModule } from './database/database.module';
 import { AuthController } from './auth/auth.controller';
 import { JwtService } from '@nestjs/jwt';
 import { UserController } from './user/user.controller';
+import { APP_FILTER } from '@nestjs/core';
+import { ExceptionsLoggerFilter } from './utils/excepteionsLogger';
 
 @Module({
   imports: [
@@ -31,6 +33,9 @@ import { UserController } from './user/user.controller';
     UserModule,
   ],
   controllers: [UserController, AuthController, AppController],
-  providers: [AuthService, AppService],
+  providers: [AuthService, AppService, {
+    provide: APP_FILTER,
+    useClass: ExceptionsLoggerFilter,
+  },],
 })
 export class AppModule {}

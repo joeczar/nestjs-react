@@ -1,5 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { UserService } from 'src/user/user.service';
+import { UserService } from '../user/user.service';
 import { PostgresErrorCode } from '../database/postgresErrorCode.enum';
 import RegisterDto from './dto/register.dto';
 import bcrypt from 'bcrypt';

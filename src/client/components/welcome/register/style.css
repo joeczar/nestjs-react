@@ -3,7 +3,7 @@ p, div {
   }
     
   .wrapper {
-    height: 97vh;
+    height: 70vh;
     width: 100%;
     display: flex;
     flex-direction: column;

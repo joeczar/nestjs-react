@@ -1,4 +1,3 @@
-import { NestApplicationContextOptions } from '@nestjs/common/interfaces/nest-application-context-options.interface';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import {CreateUserDto} from '../../user/dto/createUser.dto'

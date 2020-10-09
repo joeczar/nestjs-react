@@ -34,7 +34,7 @@ export class UserService {
 
   async getAll() {
     try {
-      const users = await this.usersRepository.find();
+      const users = await this.usersRepository.find({ select: ["id","email","name"]});
       console.log(users);
       
       if (users) {
