@@ -1,22 +1,46 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { UserController } from './user.controller';
+import { Test } from '@nestjs/testing';
+import { getRepositoryToken } from '@nestjs/typeorm';
+import User from './user.entity';
 import { UserService } from './user.service';
 
-describe('UserController', () => {
-  let controller: UserController;
-  let userService: UserService;
-
+describe('The UserService', () => {
+  let usersService: UserService;
+  let findOne: jest.Mock;
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
-      controllers: [UserController],
-      providers: [UserService]
-    }).compile();
-
-    controller = module.get<UserController>(UserController);
-    userService = module.get<UserService>(UserService)
-  });
-
-  it('should be defined', () => {
-    expect(controller).toBeUndefined();
-  });
+    findOne = jest.fn();
+    const module = await Test.createTestingModule({
+      providers: [
+        UserService,
+        {
+          provide: getRepositoryToken(User),
+          useValue: {
+            findOne
+          }
+        }
+      ],
+    })
+      .compile();
+    usersService = await module.get(UserService);
+  })
+  describe('when getting a user by email', () => {
+    describe('and the user is matched', () => {
+      let user: User;
+      beforeEach(() => {
+        user = new User();
+        findOne.mockReturnValue(Promise.resolve(user));
+      })
+      it('should return the user', async () => {
+        const fetchedUser = await usersService.getByEmail('test@test.com');
+        expect(fetchedUser).toEqual(user);
+      })
+    })
+    describe('and the user is not matched', () => {
+      beforeEach(() => {
+        findOne.mockReturnValue(undefined);
+      })
+      it('should throw an error', async () => {
+        await expect(usersService.getByEmail('test@test.com')).rejects.toThrow();
+      })
+    })
+  })
 });

@@ -8,31 +8,60 @@ import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
 import { UserModule } from './user/user.module';
 import { DatabaseModule } from './database/database.module';
+import { getRepositoryToken } from '@nestjs/typeorm';
+import User from './user/user.entity';
+import { mockedConfigService } from './utils/mocks/config.service';
+import { mockedJwtService } from './utils/mocks/jwt.service';
+import mockedUser from './utils/mocks/user.mock';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
+import { Repository } from 'typeorm';
+import { UserRepo } from './utils/mocks/MockedUserRepository';
+import { AuthModule } from './auth/auth.module';
 
 describe('AppController', () => {
-  let appController: AppController;
-  let authService: AuthService;
-  let userService: UserService
-  let jwtService: JwtService
-  let configService: ConfigService
+  let app: INestApplication;
+  let userData: User;
 
   beforeEach(async () => {
-    const app: TestingModule = await Test.createTestingModule({
-      imports: [UserModule, DatabaseModule],
+    userData = {
+      ...mockedUser
+    }
+    const userRepository = {
+      create: jest.fn().mockResolvedValue(userData),
+      save: jest.fn().mockReturnValue(Promise.resolve())
+    }
+    const module: TestingModule = await Test.createTestingModule({
+      imports: [UserModule, AuthModule],
       controllers: [AppController],
-      providers: [AppService, AuthService, UserService, JwtService, ConfigService],
+      providers: [UserService, AppService, AuthService, {
+        provide: ConfigService,
+        useValue: mockedConfigService
+      },
+      {
+        provide: JwtService,
+        useValue: mockedJwtService
+      },
+      {
+        provide: getRepositoryToken(User),
+        useValue: userRepository,
+      },
+      {
+        provide: 'UserRepository',
+        useClass: UserRepo,
+      }
+ 
+    ],
     }).compile();
 
-    appController = app.get<AppController>(AppController);
-    authService = app.get<AuthService>(AuthService)
-    userService = app.get<UserService>(UserService)
-    jwtService = app.get<JwtService>(JwtService)
-    configService = app.get<ConfigService>(ConfigService)
+    app = module.createNestApplication();
+    app.useGlobalPipes(new ValidationPipe());
+    await app.init();
+    
   });
 
   describe('root', () => {
     it('if not authenticated should redirect to /welcome', () => {
-      expect(appController).toBeUndefined();
+      expect(app).toBeDefined();
     });
   });
 });

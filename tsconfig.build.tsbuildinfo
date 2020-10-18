@@ -2747,8 +2747,8 @@
         "affectsGlobalScope": false
       },
       "./src/user/user.entity.ts": {
-        "version": "0a33ade3afdf65825a0f643cb61ebf17f641d212bd3e614dd40ccb42dde0a553",
-        "signature": "e94b982d73dc3161513c9ecf2237b0084583cd89934c977096ea4bb53efdf530",
+        "version": "ee6eb42daf69bd2283c9c9304d64f6e99aa6a511df8107e5a9c1a5f6817185cd",
+        "signature": "86bdf6f2cd2b90407e2c281a1014473a447a01be757bc4aa92ac00feac3bb37f",
         "affectsGlobalScope": false
       },
       "./src/user/dto/createUser.dto.ts": {
@@ -3492,7 +3492,7 @@
         "affectsGlobalScope": false
       },
       "./src/auth/auth.service.ts": {
-        "version": "35616536753b9a44141f6fb49ac4f5de572500ecbfed3b94e0d4342cc5278f77",
+        "version": "a16430642243b2ef3f33ba02c43720639d99591551c2d9885cbbb7b9c07487fb",
         "signature": "239bbc86629305097bcdf11d408ade5bf8b2597f227a5d83bd705f59e41f0dc7",
         "affectsGlobalScope": false
       },
@@ -4001,6 +4001,11 @@
         "signature": "768302ebbbb1a67508debaa3a1f5950989751e6d954e7b560caa8ec5f62e756d",
         "affectsGlobalScope": false
       },
+      "./src/utils/mocks/MockedUserRepository.ts": {
+        "version": "1a97252ecd2408389d2bd0f8180b8384e56c557549732d57c5a029178e6a34f5",
+        "signature": "1421ac1daf819f3ca10cfb9b6adc2d26317d17201030ad3753f4f6897ec92882",
+        "affectsGlobalScope": false
+      },
       "./src/utils/mocks/config.service.ts": {
         "version": "e09ca199ebd88c4d5f012c7ff68cbf4a434d693c01b5005f639e3f33b15cdd78",
         "signature": "47268bedee870ce20e0ac5c88bee59b08dfbac690f6c6b65835e52a25aeea22f",
@@ -4009,6 +4014,11 @@
       "./src/utils/mocks/jwt.service.ts": {
         "version": "e240cd108189ac741f25df22f48940f126c9223403e01aa0a39efbc3605f1772",
         "signature": "e88c683eb0e64bf5ee46cf1ba4441fa4eb459c1437f6c426a72e94d469009771",
+        "affectsGlobalScope": false
+      },
+      "./src/utils/mocks/user.mock.ts": {
+        "version": "c3bbc441515f088aeb53afa5b084f3d5a354e51a46a6481d2a0e957048f930a8",
+        "signature": "d897fac0650706e9b2ad576420d45987ccc33e1f313ac07ced84e06b2875f63f",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/anymatch/index.d.ts": {
@@ -7618,6 +7628,13 @@
       "./src/utils/excepteionsLogger.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
         "./node_modules/@nestjs/core/index.d.ts"
+      ],
+      "./src/utils/mocks/MockedUserRepository.ts": [
+        "./node_modules/typeorm/index.d.ts",
+        "./src/user/user.entity.ts"
+      ],
+      "./src/utils/mocks/user.mock.ts": [
+        "./src/user/user.entity.ts"
       ]
     },
     "exportedModulesMap": {
@@ -10797,6 +10814,13 @@
       "./src/utils/excepteionsLogger.ts": [
         "./node_modules/@nestjs/common/index.d.ts",
         "./node_modules/@nestjs/core/index.d.ts"
+      ],
+      "./src/utils/mocks/MockedUserRepository.ts": [
+        "./node_modules/typeorm/index.d.ts",
+        "./src/user/user.entity.ts"
+      ],
+      "./src/utils/mocks/user.mock.ts": [
+        "./src/user/user.entity.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -11666,8 +11690,10 @@
       "./src/user/user.module.ts",
       "./src/user/user.service.ts",
       "./src/utils/excepteionsLogger.ts",
+      "./src/utils/mocks/MockedUserRepository.ts",
       "./src/utils/mocks/config.service.ts",
-      "./src/utils/mocks/jwt.service.ts"
+      "./src/utils/mocks/jwt.service.ts",
+      "./src/utils/mocks/user.mock.ts"
     ]
   },
   "version": "3.9.7"

@@ -12,7 +12,7 @@ class User {
   public name!: string;
 
   @Column()
-  public password!: string;
+  public password?: string;
 }
 
 export default User;

@@ -22,7 +22,7 @@ export class AuthService {
         ...registrationData,
         password: hashedPassword,
       });
-      createdUser.password = 'undefined';
+      createdUser.password = undefined;
       return createdUser;
     } catch (error) {
       if (error?.code === PostgresErrorCode.UniqueViolation) {
@@ -40,18 +40,23 @@ export class AuthService {
   public async getAuthenticatedUser(email: string, hashedPassword: string) {
     try {
       const user = await this.usersService.getByEmail(email);
-      const isPasswordMatching = await bcrypt.compare(
-        hashedPassword,
-        user.password,
-      );
-      if (!isPasswordMatching) {
-        throw new HttpException(
-          'Wrong credentials provided',
-          HttpStatus.BAD_REQUEST,
+      if (user.password) {
+        const isPasswordMatching = await bcrypt.compare(
+          hashedPassword,
+          user.password,
         );
+        if (!isPasswordMatching) {
+          throw new HttpException(
+            'Wrong credentials provided',
+            HttpStatus.BAD_REQUEST,
+          );
+        }
+        user.password = undefined;
+        return user;
+      } else {
+        throw new Error('Password Missing')
       }
-      user.password = 'undefined';
-      return user;
+      
     } catch (error) {
       throw new HttpException(
         'Wrong credentials provided',
