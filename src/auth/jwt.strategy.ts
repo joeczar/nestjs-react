@@ -5,12 +5,14 @@ import { ConfigService } from '@nestjs/config';
 import { Request } from 'express';
 import { UserService } from '../user/user.service';
 import { TokenPayload } from './tokenPayload.interface';
+import { ModuleRef } from '@nestjs/core';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(
     private readonly configService: ConfigService,
     private readonly userService: UserService,
+    private moduleRef: ModuleRef
   ) {
     super({
       jwtFromRequest: ExtractJwt.fromExtractors([
@@ -19,6 +21,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
         },
       ]),
       secretOrKey: configService.get('JWT_SECRET'),
+      passReqToCallback: true,
     });
   }
 

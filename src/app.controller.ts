@@ -3,7 +3,6 @@ import { Response } from 'express';
 import { AppService } from './app.service';
 import { AuthService } from './auth/auth.service';
 import JwtAuthGuard from './auth/jwtAuth.guard';
-import RequestWithUser from './auth/requestWithUser.interface';
 import RequestWithAuth from './auth/requestWithAuth.interface';
 import { AuthExceptionFilter } from './exceptions/auth.exception';
 
